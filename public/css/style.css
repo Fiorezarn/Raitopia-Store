@@ -1,0 +1,26 @@
+.carousel-item {
+    height: 420px;
+}
+
+.carousel-control-prev,
+.carousel-control-next  {
+    background-color: green;
+    top: calc(50% - 25px);
+    opacity: .8;
+}
+
+.carousel-control-prev {
+    left: 0px;
+}
+
+.carousel-control-next {
+    right: 0px;
+}
+
+.specialoffers {
+    width: 100%;
+    height: 300px;
+    background-color: white;
+    padding-top: 50px;
+    padding-bottom: 700px;
+}

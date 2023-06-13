@@ -17,6 +17,11 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/product', function () {
+    return view('product');
+});
+
+//////////////////////////////////////////////////////////////////////////////////////////////
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -24,3 +29,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//////////////////////////////////////////////////////////////////////////////////////////////
