@@ -12,11 +12,7 @@ class ProductController extends Controller
     }
     public function index()
     {
-        $data = [
-            'product' => $this->Item->where('category', 'sneakers')->get(),
-            'totalproduct' => $this->Item->where('category', 'sneakers')->count(),
-        ];
-        return view('adminlte.v_dataitem', $data);
+        return view('adminlte.v_template', $data);
     }
     public function detail($id)
     {
