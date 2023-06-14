@@ -41,7 +41,7 @@ class ProductController extends Controller
             'no_produk' => 'required|unique:products,id|min:1|max:6',
             'nama_produk' => 'required|max:100',
             'stock' => 'required|integer',
-            'photo' => 'required|mimes:jpg,jpeg,png,webp|max:1000',
+            'photo' => 'required|mimes:jpg,jpeg,png,webp|min:100',
             'deskripsi' => 'required',
             'harga' => 'required|integer',
         ],[
@@ -81,18 +81,16 @@ class ProductController extends Controller
         ];
         return view ('adminlte.v_edititem', $data);
     }
-
     public function update($id)
     {
         Request()->validate([
             'id' => 'required|min:1|max:6',
             'no_produk' => 'required|unique:products,id|min:1|max:6',
-            'namaproduk' => 'required|max:100',
-            'size' => 'required',
+            'nama_produk' => 'required|max:100',
             'stock' => 'required|integer',
+            'photo' => 'required|mimes:jpg,jpeg,png,webp|max:1000',
+            'deskripsi' => 'required',
             'harga' => 'required|integer',
-            'category' => 'required|max:25',
-            'photo' => 'mimes:jpg,jpeg,png,webp|max:1000',
         ],[
             'id.required' => 'wajib diisi !!',
             'id.unique' => 'id Sudah Ada !!',
@@ -109,14 +107,12 @@ class ProductController extends Controller
         $file->move(public_path('product-img'), $fileName);
 
         $data = [
-            'id' => Request()->id,
             'no_produk' => Request()->no_produk,
-            'namaproduk' => Request()->namaproduk,
-            'size' => Request()->size,
+            'nama_produk' => Request()->nama_produk,
             'stock' => Request()->stock,
-            'harga' => Request()->harga,
-            'category' => Request()->category,
             'photo' => $fileName,
+            'deskripsi' => Request()->deskripsi,
+            'harga' => Request()->harga,
         ];
 
         $this->Product->editData($id, $data);
@@ -125,24 +121,24 @@ class ProductController extends Controller
             $data = [
                 'id' => Request()->id,
                 'no_produk' => Request()->no_produk,
-                'namaproduk' => Request()->namaproduk,
-                'size' => Request()->size,
+                'nama_produk' => Request()->nama_produk,
                 'stock' => Request()->stock,
+                'photo' => $fileName,
+                'deskripsi' => Request()->deskripsi,
                 'harga' => Request()->harga,
-                'category' => Request()->category,
             ];
             $this->Product->editData($id, $data);
         }
         return redirect()->route('dashboard')->with('pesan','Data Berhasil Di Update !!');
     }
-    public function delete($id)
-    {
-        //hapus foto
-        $product = $this->Product->detailData($id);
-        if ($product->photo <> "") {
-            unlink(public_path('product-img') . '/' . $product->photo);
-        }   
-        $this->Product->deleteData($id);
-        return redirect()->route('dashboard')->with('pesan','Data Berhasil Di Hapus !!');
-    }
+    // public function delete($id)
+    // {
+    //     //hapus foto
+    //     $product = $this->Item->detailData($id);
+    //     if ($product->photo <> "") {
+    //         unlink(public_path('product-img') . '/' . $product->photo);
+    //     }   
+    //     $this->Item->deleteData($id);
+    //     return redirect()->route('dataitem')->with('pesan','Data Berhasil Di Hapus !!');
+    // }
 }
