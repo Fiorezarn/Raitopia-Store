@@ -51,17 +51,17 @@
                 <div class="row">
                   <div class="col">
                     <h5>Keamanan Terjamin</h5>
-                    <i class='bx bx-check-shield' style="font-size: 120px; color:blue;"></i>
+                    <img src="img/safety.png" alt="safety" style="width: 200px">
                     <p>Kami menjamin keamanan belanja Anda dengan sistem keamanan terpercaya dan perlindungan data yang ketat. Belanja dengan kami adalah pengalaman yang aman dan nyaman</p>
                   </div>
                   <div class="col">
                     <h5>Barang Original</h5>
-                    <i class='bx bx-like' style="font-size: 120px; color:rgb(0, 255, 115);"></i>
+                    <img src="img/original.png" alt="original" style="width: 200px">
                     <p>Kami berkomitmen untuk menjadi olshop yang mengutamakan barang original. Kami percaya bahwa keaslian produk adalah hal yang penting bagi pelanggan kami. Dengan memastikan bahwa semua barang yang kami tawarkan adalah original, kami ingin memberikan kepercayaan dan kepuasan kepada pelanggan dalam berbelanja di olshop kami.</p>
                   </div>
                   <div class="col">
                     <h5>Layanan Pelanggan 24 Jam</h5>
-                    <i class='bx bx-phone-call' style="font-size: 120px; color:rgb(255, 208, 0);"></i>
+                    <img src="img/full-time.png" alt="service" style="width: 200px">
                     <p>Kami siap memberikan pelayanan terbaik dengan layanan pelanggan kami yang tersedia 24 jam, tim kami akan selalu ada di sini untuk membantu menjawab pertanyaan, memberikan saran produk, dan menyelesaikan masalah dengan cepat. Kami berkomitmen untuk memberikan pengalaman belanja yang menyenangkan dan aman, serta memastikan kepuasan pelanggan adalah prioritas utama kami.</p>
                   </div>
                 </div>
@@ -83,7 +83,7 @@
           <div class="row">
               <div class="col-lg-4 col-md-6 mb-3">
                   <div class="card item cardpro" style="width: 300px;">
-                    <img src="product/product1.jpeg" class="d-block w-100" alt="product1">
+                    <img src="product-img/product1.jpeg" class="d-block w-100" alt="product1">
                       <div class="card-body">
                         <img src="">
                           <h5 class="card-title">Diamon Free Fire</h5>
