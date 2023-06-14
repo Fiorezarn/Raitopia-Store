@@ -71,8 +71,6 @@
           </tr>                
       @endforeach
       </tbody>
-    
-      </table>
       @foreach ($product as $item)
       <div class="modal fade" id="delete{{ $item->id }}">
         <div class="modal-dialog">
@@ -98,16 +96,11 @@
       <!-- /.modal -->
   </div>
   @endforeach
-    </div>
-  @include('adminlte.footer')
+  
+      </table>
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
 </div>
-<!-- ./wrapper -->
+@include('adminlte.footer')
 
 @include('adminlte.script')
 </body>

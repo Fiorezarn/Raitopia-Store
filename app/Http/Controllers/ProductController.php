@@ -41,7 +41,7 @@ class ProductController extends Controller
             'no_produk' => 'required|unique:products,id|min:1|max:6',
             'nama_produk' => 'required|max:100',
             'stock' => 'required|integer',
-            'photo' => 'required|mimes:jpg,jpeg,png,webp|min:100',
+            'photo' => 'required|mimes:jpg,jpeg,png,webp|max:1000',
             'deskripsi' => 'required',
             'harga' => 'required|integer',
         ],[
@@ -92,7 +92,7 @@ class ProductController extends Controller
             'stock' => 'required|integer',
             'harga' => 'required|integer',
             'category' => 'required|max:25',
-            'photo' => 'mimes:jpg,jpeg,png,webp|max:100',
+            'photo' => 'mimes:jpg,jpeg,png,webp|max:1000',
         ],[
             'id.required' => 'wajib diisi !!',
             'id.unique' => 'id Sudah Ada !!',
