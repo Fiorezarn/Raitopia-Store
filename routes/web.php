@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,5 +26,13 @@ Route::get('/product', function () {
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 Auth::routes();
-Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('home');
+// Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('home');
+//////////////////////////////////////////////////////////////////////////////////////////////
+Route::get('/dashboard',[ProductController::class,'index'])->name('dataitem');
+// Route::get('/dataitem/detailitem/{id}',[ProductController::class,'detail']);
+// Route::get('/dashboard/add',[ProductController::class,'add']);
+// Route::post('/dataitem/insert',[ProductController::class,'insert']);
+// Route::get('/dataitem/edit/{id}',[ProductController::class,'edit']);
+// Route::post('/dataitem/update/{id}',[ProductController::class,'update']);
+// Route::get('/dataitem/delete/{id}',[ProductController::class,'delete']);
 //////////////////////////////////////////////////////////////////////////////////////////////

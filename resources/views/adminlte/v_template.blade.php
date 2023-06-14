@@ -29,7 +29,7 @@
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
-    <a href="#" class="btn btn-primary btn-sm">Add Product</a>
+    <a href="/dataitem/add" class="btn btn-primary btn-sm">Add Product</a>
     <br><br>
     
     @if (session('pesan'))
@@ -44,14 +44,33 @@
             <tr>
                 <td>No</td>
                 <td>Nama Produk</td>
-                <td>Size</td>
                 <td>Stock</td>
                 <td>Harga</td>
-                <td>Category</td>
+                <td>Deskripsi</td>
                 <td>Photo</td>
                 <td>Action</td>
             </tr>
         </thead>
+
+        <tbody>
+          @foreach ($jualan as $item)
+          <tr>
+              <td>{{ $item->no_produk }}</td>
+              <td>{{ $item->nama_produk }}</td>
+              <td>{{ $item->stock }}</td>
+              <td>IDR {{ number_format($item->harga, 0, ',', ',') }}</td>
+              <td>{{ $item->deskripsi }}</td>
+              <td><img src="{{ url('product-img/' . $item->photo) }}" width="100px"></td>
+              <td>
+                  <a href="#" class="btn btn-sm btn-success">Detail</a>
+                  <a href="#" class="btn btn-sm btn-warning">Edit</a>
+                  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#">
+                      Delete
+                  </button>
+              </td>
+          </tr>                
+      @endforeach
+      </tbody>
     
       </table>
     </div>
