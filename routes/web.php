@@ -26,8 +26,6 @@ Route::get('/product', function () {
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 Auth::routes();
-// Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('home');
-//////////////////////////////////////////////////////////////////////////////////////////////
 Route::get('/dashboard',[ProductController::class,'index'])->name('dashboard');
 Route::get('/dashboard/detailitem/{id}', [ProductController::class, 'detail']);
 Route::get('/dashboard/add',[ProductController::class,'add']);
