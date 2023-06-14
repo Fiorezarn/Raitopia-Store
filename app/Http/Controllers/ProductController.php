@@ -14,20 +14,20 @@ class ProductController extends Controller
     public function index()
     {
         $data = [
-            'jualan' => $this->Product->allData(),
+            'product' => $this->Product->allData(),
         ];
         return view('adminlte.v_template', $data);
     }
-    // public function detail($id)
-    // {
-    //     if (!$this->Products->detailData($id)) {
-    //         abort(404);
-    //     }
-    //     $data = [
-    //         'product'=> $this->Products->detailData($id),
-    //     ];
-    //     return view('adminlte.v_detailitem', $data);
-    // }
+    public function detail($id)
+    {
+        if (!$this->Product->detailData($id)) {
+            abort(404);
+        }
+        $data = [
+            'product'=> $this->Product->detailData($id),
+        ];
+        return view('adminlte.v_detailitem', $data);
+    }
 
     // public function add()
     // {

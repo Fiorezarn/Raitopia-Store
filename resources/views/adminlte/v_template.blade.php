@@ -29,7 +29,7 @@
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
-    <a href="/dataitem/add" class="btn btn-primary btn-sm">Add Product</a>
+    <a href="/dashboard/add" class="btn btn-primary btn-sm">Add Product</a>
     <br><br>
     
     @if (session('pesan'))
@@ -53,7 +53,7 @@
         </thead>
 
         <tbody>
-          @foreach ($jualan as $item)
+          @foreach ($product as $item)
           <tr>
               <td>{{ $item->no_produk }}</td>
               <td>{{ $item->nama_produk }}</td>
@@ -62,7 +62,7 @@
               <td>{{ $item->deskripsi }}</td>
               <td><img src="{{ url('product-img/' . $item->photo) }}" width="100px"></td>
               <td>
-                  <a href="#" class="btn btn-sm btn-success">Detail</a>
+                  <a href="dashboard/detailitem/{{ $item->id }}" class="btn btn-sm btn-success">Detail</a>
                   <a href="#" class="btn btn-sm btn-warning">Edit</a>
                   <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#">
                       Delete

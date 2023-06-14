@@ -29,7 +29,7 @@ Auth::routes();
 // Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('home');
 //////////////////////////////////////////////////////////////////////////////////////////////
 Route::get('/dashboard',[ProductController::class,'index'])->name('dataitem');
-// Route::get('/dataitem/detailitem/{id}',[ProductController::class,'detail']);
+Route::get('/dashboard/detailitem/{id}', [ProductController::class, 'detail']);
 // Route::get('/dashboard/add',[ProductController::class,'add']);
 // Route::post('/dataitem/insert',[ProductController::class,'insert']);
 // Route::get('/dataitem/edit/{id}',[ProductController::class,'edit']);
