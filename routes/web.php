@@ -34,5 +34,5 @@ Route::get('/dashboard/add',[ProductController::class,'add']);
 Route::post('/dashboard/insert',[ProductController::class,'insert']);
 Route::get('/dashboard/edit/{id}',[ProductController::class,'edit']);
 Route::post('/dashboard/update/{id}',[ProductController::class,'update']);
-// Route::get('/dataitem/delete/{id}',[ProductController::class,'delete']);
+Route::get('/dashboard/delete/{id}',[ProductController::class,'delete']);
 //////////////////////////////////////////////////////////////////////////////////////////////
