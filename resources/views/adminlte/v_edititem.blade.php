@@ -23,7 +23,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Add Product</h1>
+                            <h1 class="m-0">Edit Product</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -32,7 +32,7 @@
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
-                    <form action="/dashboard/insert" method="POST" enctype="multipart/form-data">
+                    <form action="/dashboard/update/{{ $product->id }}" method="POST" enctype="multipart/form-data">
                         @csrf
     
                         <div class="content">
@@ -40,17 +40,18 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="">Id product</label>
-                                        <input name="id" class="form-control" value="{{ old('id') }}">
-                                            <div class="text-danger">
+                                        <input name="id" class="form-control" value="{{ $product->id }}"
+                                            readonly>
+                                        <div class="text-danger">
                                             @error('id')
-                                            {{ $message }}
+                                                {{ $message }}
                                             @enderror
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="">No product</label>
-                                        <input name="no_produk" class="form-control" value="{{ old('no_produk') }}">
+                                        <input name="no_produk" class="form-control" value="{{ $product->no_produk }}">
                                         <div class="text-danger">
                                         @error('no_produk')
                                         {{ $message }}
@@ -60,7 +61,7 @@
 
                                     <div class="form-group">
                                         <label for="">Nama Product</label>
-                                        <input name="nama_produk" class="form-control" value="{{ old('nama_produk') }}">
+                                        <input name="nama_produk" class="form-control" value="{{ $product->nama_produk }}">
                                         <div class="text-danger">
                                         @error('nama_produk')
                                         {{ $message }}
@@ -70,7 +71,7 @@
 
                                     <div class="form-group">
                                         <label for="">Stock</label>
-                                        <input name="stock" class="form-control" value="{{ old('stock') }}">
+                                        <input name="stock" class="form-control" value="{{ $product->stock }}">
                                         <div class="text-danger">
                                         @error('stock')
                                         {{ $message }}
@@ -78,19 +79,24 @@
                                     </div>
                                     </div>
 
+                                    <div class="col-sm 12">
+                                        <div class="col-sm-4">
+                                            <img src="{{ url('product-img/' . $product->photo) }}" width="150px">
+                                        </div>
+                                    </div>
                                     <div class="form-group">
                                         <label for="">Photo</label>
                                         <input type="file" name="photo" class="form-control">
                                         <div class="text-danger">
-                                        @error('photo')
-                                        {{ $message }}
-                                        @enderror
-                                    </div>
+                                            @error('photo')
+                                                {{ $message }}
+                                            @enderror
+                                        </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="">Deskripsi</label>
-                                        <input name="deskripsi" class="form-control" value="{{ old('deskripsi') }}">
+                                        <input name="deskripsi" class="form-control" value="{{ $product->deskripsi }}">
                                         <div class="text-danger">
                                         @error('deskripsi')
                                         {{ $message }}
@@ -100,7 +106,7 @@
 
                                     <div class="form-group">
                                         <label for="">Harga</label>
-                                        <input name="harga" class="form-control" value="{{ old('harga') }}">
+                                        <input name="harga" class="form-control" value="{{ $product->harga }}">
                                         <div class="text-danger">
                                             @error('harga')
                                             {{ $message }}

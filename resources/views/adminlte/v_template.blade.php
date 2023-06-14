@@ -63,7 +63,7 @@
               <td><img src="{{ url('product-img/' . $item->photo) }}" width="100px"></td>
               <td>
                   <a href="dashboard/detailitem/{{ $item->id }}" class="btn btn-sm btn-success">Detail</a>
-                  <a href="#" class="btn btn-sm btn-warning">Edit</a>
+                  <a href="dashboard/edit/{{ $item->id }}" class="btn btn-sm btn-warning">Edit</a>
                   <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#">
                       Delete
                   </button>
