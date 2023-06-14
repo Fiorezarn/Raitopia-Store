@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +20,11 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/product', function () {
-    return view('product');
-});
+// Route::get('/product', function () {
+//     return view('product');
+// });
+
+Route::get('/product',[CardController::class,'index'])->name('card');
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////

@@ -36,12 +36,13 @@
         
         <br>
         <div class="row mt-3 mb-3">
-            {{-- @forelse ($produk as $item)
+            @forelse ($product as $item)
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card item cardpro" style="width: 300px;">
-                    <img src="{{ asset('storage/avatarproduk/' . $item['avatar']) }}">
+                <img src="{{ url('product-img/' . $item->photo) }}"
+                class="card-img-top" alt="{{ $item->nama_produk }}">
                     <div class="card-body">
-                        <h5 class="card-title">{{ $item['nama'] }}</h5>
+                        <h5 class="card-title">{{ $item['nama_produk'] }}</h5>
                         <p class="card-text">{{ 'Rp. ' . number_format($item['harga'], 0, ',', '.') }}</p>
                         <a class="btn btn-primary" href="/showproduct/{{ $item->id }}">Lihat lebih lanjut</a>
                     </div>
@@ -52,73 +53,73 @@
                 <p>Tidak ada produk yang sesuai dengan filter yang diberikan.</p>
             </div>
             @endforelse
+        </div>
+
+        {{-- <div class="col-lg-4 col-md-6 mb-3">
+            <div class="card item cardpro" style="width: 300px;">
+                <img src="product-img/product1.jpeg" class="d-block w-100" alt="product1">
+                <div class="card-body">
+                    <h5 class="card-title">Diamon Free Fire</h5>
+                    <p class="card-text">Rp. 15.000</p>
+                    <a class="btn btn-primary" href="#">Lihat lebih lanjut</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-3">
+            <div class="card item cardpro" style="width: 300px;">
+                <img src="product-img/product1.jpeg" class="d-block w-100" alt="product1">
+                <div class="card-body">
+                    <h5 class="card-title">Diamon Free Fire</h5>
+                    <p class="card-text">Rp. 15.000</p>
+                    <a class="btn btn-primary" href="#">Lihat lebih lanjut</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-3">
+            <div class="card item cardpro" style="width: 300px;">
+                <img src="product-img/product1.jpeg" class="d-block w-100" alt="product1">
+                <div class="card-body">
+                    <h5 class="card-title">Diamon Free Fire</h5>
+                    <p class="card-text">Rp. 15.000</p>
+                    <a class="btn btn-primary" href="#">Lihat lebih lanjut</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-3">
+            <div class="card item cardpro" style="width: 300px;">
+                <img src="product-img/product1.jpeg" class="d-block w-100" alt="product1">
+                <div class="card-body">
+                    <h5 class="card-title">Diamon Free Fire</h5>
+                    <p class="card-text">Rp. 15.000</p>
+                    <a class="btn btn-primary" href="#">Lihat lebih lanjut</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-3">
+            <div class="card item cardpro" style="width: 300px;">
+                <img src="product-img/product1.jpeg" class="d-block w-100" alt="product1">
+                <div class="card-body">
+                    <h5 class="card-title">Diamon Free Fire</h5>
+                    <p class="card-text">Rp. 15.000</p>
+                    <a class="btn btn-primary" href="#">Lihat lebih lanjut</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-3">
+            <div class="card item cardpro" style="width: 300px;">
+                <img src="product-img/product1.jpeg" class="d-block w-100" alt="product1">
+                <div class="card-body">
+                    <h5 class="card-title">Diamon Free Fire</h5>
+                    <p class="card-text">Rp. 15.000</p>
+                    <a class="btn btn-primary" href="#">Lihat lebih lanjut</a>
+                </div>
+            </div>
         </div> --}}
-
-        <div class="col-lg-4 col-md-6 mb-3">
-            <div class="card item cardpro" style="width: 300px;">
-                <img src="product-img/product1.jpeg" class="d-block w-100" alt="product1">
-                <div class="card-body">
-                    <h5 class="card-title">Diamon Free Fire</h5>
-                    <p class="card-text">Rp. 15.000</p>
-                    <a class="btn btn-primary" href="#">Lihat lebih lanjut</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-3">
-            <div class="card item cardpro" style="width: 300px;">
-                <img src="product-img/product1.jpeg" class="d-block w-100" alt="product1">
-                <div class="card-body">
-                    <h5 class="card-title">Diamon Free Fire</h5>
-                    <p class="card-text">Rp. 15.000</p>
-                    <a class="btn btn-primary" href="#">Lihat lebih lanjut</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-3">
-            <div class="card item cardpro" style="width: 300px;">
-                <img src="product-img/product1.jpeg" class="d-block w-100" alt="product1">
-                <div class="card-body">
-                    <h5 class="card-title">Diamon Free Fire</h5>
-                    <p class="card-text">Rp. 15.000</p>
-                    <a class="btn btn-primary" href="#">Lihat lebih lanjut</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-3">
-            <div class="card item cardpro" style="width: 300px;">
-                <img src="product-img/product1.jpeg" class="d-block w-100" alt="product1">
-                <div class="card-body">
-                    <h5 class="card-title">Diamon Free Fire</h5>
-                    <p class="card-text">Rp. 15.000</p>
-                    <a class="btn btn-primary" href="#">Lihat lebih lanjut</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-3">
-            <div class="card item cardpro" style="width: 300px;">
-                <img src="product-img/product1.jpeg" class="d-block w-100" alt="product1">
-                <div class="card-body">
-                    <h5 class="card-title">Diamon Free Fire</h5>
-                    <p class="card-text">Rp. 15.000</p>
-                    <a class="btn btn-primary" href="#">Lihat lebih lanjut</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-3">
-            <div class="card item cardpro" style="width: 300px;">
-                <img src="product-img/product1.jpeg" class="d-block w-100" alt="product1">
-                <div class="card-body">
-                    <h5 class="card-title">Diamon Free Fire</h5>
-                    <p class="card-text">Rp. 15.000</p>
-                    <a class="btn btn-primary" href="#">Lihat lebih lanjut</a>
-                </div>
-            </div>
-        </div>
 
     </div>
 </section>
