@@ -35,7 +35,7 @@
                     <a class="nav-list" href="{{ route('login') }}">Login</a>
                 </li>
                 <li class="nav-item nav-item-custom">
-                    <a class="nav-list" href="{{ route('register') }}">Product</a>
+                    <a class="nav-list" href="{{ route('register') }}">Register</a>
                 </li>
             </ul>
         </div>
