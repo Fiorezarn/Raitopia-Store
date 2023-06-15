@@ -16,17 +16,17 @@ use App\Http\Controllers\CardController;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
 
 // Route::get('/product', function () {
 //     return view('product');
 // });
 
-Route::get('/product',[CardController::class,'index'])->name('card');
-
-
+Route::get('/', [CardController::class, 'home']);
+Route::get('/product', [CardController::class, 'index'])->name('card');
+Route::get('/product/filter', [CardController::class, 'filter'])->name('produk.filter');
 //////////////////////////////////////////////////////////////////////////////////////////////
 Auth::routes();
 Route::get('/dashboard',[ProductController::class,'index'])->name('dashboard');
@@ -37,3 +37,4 @@ Route::get('/dashboard/edit/{id}',[ProductController::class,'edit']);
 Route::post('/dashboard/update/{id}',[ProductController::class,'update']);
 Route::get('/dashboard/delete/{id}',[ProductController::class,'delete']);
 //////////////////////////////////////////////////////////////////////////////////////////////
+

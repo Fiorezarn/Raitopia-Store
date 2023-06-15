@@ -8,12 +8,12 @@
         <br><br>
         <h1 class="text-center">Daftar Produk</h1>
         <br>
-        {{-- <form method="GET" action="{{ route('produk.filter') }}"> --}}
+        <form method="GET" action="{{ route('produk.filter') }}">
             <div class="row">
                 <div class="col-md-4">
                     <div class="form-group">
-                        <label for="nama">Nama Produk</label>
-                        <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan nama produk" value="{{ request('nama') }}">
+                        <label for="nama_produk">Nama Produk</label>
+                        <input type="text" class="form-control" id="nama_produk" name="nama_produk" placeholder="Masukkan nama produk" value="{{ request('nama_produk') }}">
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -31,19 +31,18 @@
             </div>
             <br>
             <button type="submit" class="btn btn-primary">Terapkan Filter</button>
-            <a href="#" class="btn btn-danger">Hapus Filter</a>
+            <a href="{{ route('card') }}" class="btn btn-danger">Hapus Filter</a>
         </form>
         
         <br>
         <div class="row mt-3 mb-3">
-            @forelse ($product as $item)
+            @forelse ($products as $item)
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card item cardpro" style="width: 300px;">
-                <img src="{{ url('product-img/' . $item->photo) }}"
-                class="card-img-top" alt="{{ $item->nama_produk }}">
+                    <img src="{{ url('product-img/' . $item->photo) }}" class="card-img-top" alt="{{ $item->nama_produk }}">
                     <div class="card-body">
-                        <h5 class="card-title">{{ $item['nama_produk'] }}</h5>
-                        <p class="card-text">{{ 'Rp. ' . number_format($item['harga'], 0, ',', '.') }}</p>
+                        <h5 class="card-title">{{ $item->nama_produk }}</h5>
+                        <p class="card-text">{{ 'Rp. ' . number_format($item->harga, 0, ',', '.') }}</p>
                         <a class="btn btn-primary" href="/showproduct/{{ $item->id }}">Lihat lebih lanjut</a>
                     </div>
                 </div>
@@ -54,73 +53,6 @@
             </div>
             @endforelse
         </div>
-
-        {{-- <div class="col-lg-4 col-md-6 mb-3">
-            <div class="card item cardpro" style="width: 300px;">
-                <img src="product-img/product1.jpeg" class="d-block w-100" alt="product1">
-                <div class="card-body">
-                    <h5 class="card-title">Diamon Free Fire</h5>
-                    <p class="card-text">Rp. 15.000</p>
-                    <a class="btn btn-primary" href="#">Lihat lebih lanjut</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-3">
-            <div class="card item cardpro" style="width: 300px;">
-                <img src="product-img/product1.jpeg" class="d-block w-100" alt="product1">
-                <div class="card-body">
-                    <h5 class="card-title">Diamon Free Fire</h5>
-                    <p class="card-text">Rp. 15.000</p>
-                    <a class="btn btn-primary" href="#">Lihat lebih lanjut</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-3">
-            <div class="card item cardpro" style="width: 300px;">
-                <img src="product-img/product1.jpeg" class="d-block w-100" alt="product1">
-                <div class="card-body">
-                    <h5 class="card-title">Diamon Free Fire</h5>
-                    <p class="card-text">Rp. 15.000</p>
-                    <a class="btn btn-primary" href="#">Lihat lebih lanjut</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-3">
-            <div class="card item cardpro" style="width: 300px;">
-                <img src="product-img/product1.jpeg" class="d-block w-100" alt="product1">
-                <div class="card-body">
-                    <h5 class="card-title">Diamon Free Fire</h5>
-                    <p class="card-text">Rp. 15.000</p>
-                    <a class="btn btn-primary" href="#">Lihat lebih lanjut</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-3">
-            <div class="card item cardpro" style="width: 300px;">
-                <img src="product-img/product1.jpeg" class="d-block w-100" alt="product1">
-                <div class="card-body">
-                    <h5 class="card-title">Diamon Free Fire</h5>
-                    <p class="card-text">Rp. 15.000</p>
-                    <a class="btn btn-primary" href="#">Lihat lebih lanjut</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-3">
-            <div class="card item cardpro" style="width: 300px;">
-                <img src="product-img/product1.jpeg" class="d-block w-100" alt="product1">
-                <div class="card-body">
-                    <h5 class="card-title">Diamon Free Fire</h5>
-                    <p class="card-text">Rp. 15.000</p>
-                    <a class="btn btn-primary" href="#">Lihat lebih lanjut</a>
-                </div>
-            </div>
-        </div> --}}
-
     </div>
 </section>
 @endsection
