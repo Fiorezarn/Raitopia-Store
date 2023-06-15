@@ -91,7 +91,7 @@
                           <div class="card-body">
                               <h5 class="card-title">{{ $item->nama_produk }}</h5>
                               <p class="card-text">{{ 'Rp. ' . number_format($item->harga, 0, ',', '.') }}</p>
-                              <a class="btn btn-primary" href="/showproduct/{{ $item->id }}">Lihat lebih lanjut</a>
+                              <a class="btn btn-primary" href="/product/detailproduct/{{ $item->id }}">Lihat lebih lanjut</a>
                           </div>
                       </div>
                   </div>

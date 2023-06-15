@@ -29,6 +29,12 @@ class CardController extends Controller
         return view('index', $data);
     }
 
+    public function detail($id)
+    {
+        $products = Product::find($id);
+        return view("detailproduct", compact('products'));
+    }
+
     public function filter(Request $request)
     {
         $nama_produk = $request->input('nama_produk');

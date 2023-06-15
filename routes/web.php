@@ -25,6 +25,7 @@ use App\Http\Controllers\CardController;
 // });
 
 Route::get('/', [CardController::class, 'home']);
+Route::get('/product/detailproduct/{id}', [CardController::class, 'detail']);
 Route::get('/product', [CardController::class, 'index'])->name('card');
 Route::get('/product/filter', [CardController::class, 'filter'])->name('produk.filter');
 //////////////////////////////////////////////////////////////////////////////////////////////

@@ -10,6 +10,7 @@
     <title>@yield('title')</title>
 
     <!-- Scripts -->
+    <link rel="stylesheet" href="@yield('css')">
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Boostrap -->
