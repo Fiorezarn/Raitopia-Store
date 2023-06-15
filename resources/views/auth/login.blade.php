@@ -1,13 +1,13 @@
 @extends('layouts.app')
 @section('css', '/css/login.css')
-@section('title','Sneaker Society')
+@section('title','Login')
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
                 <div class="card-body">
                 <div class="judul-login">
-                <p>LOGIN</p>
+                <p>Login</p>
                 </div>
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
