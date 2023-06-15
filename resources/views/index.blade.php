@@ -74,30 +74,36 @@
     
     
     
-    {{-- product start --}}
-    <section class="produk">
-      <div class="container">
-          <br><br>
-          <h1 class="text-center">Daftar Produk</h1>
-          <br>
-          <div class="row">
-              <div class="col-lg-4 col-md-6 mb-3">
-                  <div class="card item cardpro" style="width: 300px;">
-                    <img src="product-img/product1.jpeg" class="d-block w-100" alt="product1">
-                      <div class="card-body">
-                        <img src="">
-                          <h5 class="card-title">Diamon Free Fire</h5>
-                          <p class="card-text">Rp. 15.000</p>
-                          <a class="btn btn-primary" href="#">Lihat lebih lanjut</a>
+{{-- product start --}}
+<section class="produk">
+  <div class="container">
+      <br><br>
+      <h1 class="text-center">Daftar Produk</h1>
+      <br>
+      <div class="row">
+          @php $counter = 0; @endphp
+          @foreach ($products as $item)
+              @if ($counter < 3)
+                  <div class="col-lg-4 col-md-6 mb-3">
+                      <div class="card item cardpro" style="width: 300px;">
+                          <img src="{{ url('product-img/' . $item->photo) }}"
+                              class="card-img-top" alt="{{ $item->nama_produk }}">
+                          <div class="card-body">
+                              <h5 class="card-title">{{ $item->nama_produk }}</h5>
+                              <p class="card-text">{{ 'Rp. ' . number_format($item->harga, 0, ',', '.') }}</p>
+                              <a class="btn btn-primary" href="/showproduct/{{ $item->id }}">Lihat lebih lanjut</a>
+                          </div>
                       </div>
                   </div>
-              </div>
-          </div>
-          <br><br>
-          <div class="buttonload text-center">
-            <a href="/product" class="btn btn-info">Lihat lainnya</a>
-          </div>
+              @endif
+              @php $counter++; @endphp
+          @endforeach
       </div>
       <br><br>
-    </section>
+      <div class="buttonload text-center">
+          <a href="/product" class="btn btn-info">Lihat lainnya</a>
+      </div>
+  </div>
+  <br><br>
+</section>
 @endsection
